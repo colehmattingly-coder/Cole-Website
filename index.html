@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Profile & Engineering Portfolio</title>
+    <title>Alex Morgan — Senior Full-Stack Engineer & Product Designer</title>
     
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,57 +12,48 @@
 
     <style>
         /* ==========================================
-           CSS VARIABLES & DARK GREEN DESIGN SYSTEM
+           CSS VARIABLES & DESIGN SYSTEM
            ========================================== */
         :root[data-theme="dark"] {
-            --bg-primary: #070a0d;
-            --bg-secondary: #0d131a;
-            --bg-card: #131c26;
-            --bg-card-hover: #1b2634;
-            --bg-input: #0a0f16;
-            --text-primary: #f8fafc;
+            --bg-primary: #0b0f17;
+            --bg-secondary: #131b2e;
+            --bg-card: #182238;
+            --bg-card-hover: #1f2d4a;
+            --bg-input: #0f1626;
+            --text-primary: #f1f5f9;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            
-            /* Accent: Dark Green & Forest Emerald */
-            --accent-primary: #10b981;
-            --accent-hover: #059669;
-            --accent-glow: rgba(16, 185, 129, 0.22);
-            --accent-deep: #047857;
-            --accent-light: #34d399;
-            
-            --border-color: #1e293b;
-            --border-hover: #10b981;
+            --accent-primary: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.25);
+            --accent-secondary: #06b6d4;
+            --border-color: #24314d;
+            --border-hover: #3b82f6;
             --success: #10b981;
             --danger: #ef4444;
-            --shadow: 0 12px 35px -10px rgba(0, 0, 0, 0.6);
-            --glass-bg: rgba(13, 19, 26, 0.85);
-            --glass-border: rgba(16, 185, 129, 0.12);
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(24, 34, 56, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
         }
 
         :root[data-theme="light"] {
-            --bg-primary: #f4f7f6;
+            --bg-primary: #f8fafc;
             --bg-secondary: #ffffff;
             --bg-card: #ffffff;
-            --bg-card-hover: #f0f4f2;
-            --bg-input: #edf2f0;
+            --bg-card-hover: #f1f5f9;
+            --bg-input: #f1f5f9;
             --text-primary: #0f172a;
             --text-secondary: #475569;
-            --text-muted: #64748b;
-            
-            --accent-primary: #047857;
-            --accent-hover: #065f46;
-            --accent-glow: rgba(4, 120, 87, 0.15);
-            --accent-deep: #064e3b;
-            --accent-light: #10b981;
-            
-            --border-color: #cbd5e1;
-            --border-hover: #047857;
-            --success: #059669;
-            --danger: #dc2626;
+            --text-muted: #94a3b8;
+            --accent-primary: #4f46e5;
+            --accent-glow: rgba(79, 70, 229, 0.15);
+            --accent-secondary: #0891b2;
+            --border-color: #e2e8f0;
+            --border-hover: #6366f1;
+            --success: #10b981;
+            --danger: #ef4444;
             --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-            --glass-bg: rgba(255, 255, 255, 0.88);
-            --glass-border: rgba(4, 120, 87, 0.12);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(0, 0, 0, 0.06);
         }
 
         * {
@@ -91,11 +82,11 @@
             border: none;
             outline: none;
             font-family: inherit;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.2s ease;
         }
 
         /* ==========================================
-           LAYOUT & CONTAINERS
+           LAYOUT & CONTAINER
            ========================================== */
         .container {
             max-width: 1200px;
@@ -113,10 +104,10 @@
             right: 0;
             z-index: 1000;
             background: var(--glass-bg);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--glass-border);
-            padding: 1.1rem 0;
+            padding: 1rem 0;
             transition: all 0.3s ease;
         }
 
@@ -132,28 +123,28 @@
             letter-spacing: -0.5px;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             color: var(--text-primary);
         }
 
         .logo-dot {
-            width: 11px;
-            height: 11px;
+            width: 10px;
+            height: 10px;
             background: var(--accent-primary);
             border-radius: 50%;
-            box-shadow: 0 0 12px var(--accent-primary);
+            display: inline-block;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.8rem;
             list-style: none;
         }
 
         .nav-link {
             font-size: 0.92rem;
-            font-weight: 600;
+            font-weight: 500;
             color: var(--text-secondary);
             transition: color 0.2s ease;
         }
@@ -180,18 +171,19 @@
             border-radius: 10px;
             font-weight: 600;
             font-size: 0.9rem;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-primary {
             background: var(--accent-primary);
             color: #ffffff;
-            box-shadow: 0 4px 18px var(--accent-glow);
+            box-shadow: 0 4px 15px var(--accent-glow);
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
             transform: translateY(-2px);
-            box-shadow: 0 6px 22px var(--accent-glow);
+            box-shadow: 0 6px 20px var(--accent-glow);
+            filter: brightness(1.1);
         }
 
         .btn-secondary {
@@ -228,8 +220,8 @@
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.35rem 0.85rem;
+            gap: 0.3rem;
+            padding: 0.3rem 0.75rem;
             border-radius: 20px;
             font-size: 0.78rem;
             font-weight: 600;
@@ -242,8 +234,8 @@
            HERO SECTION
            ========================================== */
         .hero {
-            padding: 9.5rem 0 5.5rem 0;
-            min-height: 88vh;
+            padding: 9rem 0 5rem 0;
+            min-height: 90vh;
             display: flex;
             align-items: center;
             position: relative;
@@ -251,7 +243,7 @@
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 3.5rem;
             align-items: center;
         }
@@ -260,11 +252,11 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.45rem 1.1rem;
+            padding: 0.4rem 1rem;
             border-radius: 30px;
             background: var(--accent-glow);
             color: var(--accent-primary);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid var(--accent-primary);
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
@@ -273,28 +265,28 @@
         .status-dot {
             width: 8px;
             height: 8px;
-            background: var(--accent-primary);
+            background: var(--success);
             border-radius: 50%;
-            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         .hero-title {
-            font-size: 3.6rem;
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.12;
-            letter-spacing: -1.8px;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
             margin-bottom: 1.2rem;
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, var(--text-primary) 20%, var(--accent-primary) 70%, var(--accent-light) 100%);
+            background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary) 70%, var(--accent-secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -302,8 +294,8 @@
         .hero-bio {
             font-size: 1.15rem;
             color: var(--text-secondary);
-            margin-bottom: 2.2rem;
-            max-width: 620px;
+            margin-bottom: 2rem;
+            max-width: 600px;
             line-height: 1.7;
         }
 
@@ -323,27 +315,17 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            padding: 2.2rem;
+            padding: 2rem;
             position: relative;
             box-shadow: var(--shadow);
             overflow: hidden;
             text-align: center;
         }
 
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-light));
-        }
-
         .avatar-wrapper {
             position: relative;
-            width: 170px;
-            height: 170px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 1.5rem auto;
         }
 
@@ -369,20 +351,19 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             transition: transform 0.2s;
         }
 
         .avatar-edit-overlay:hover {
             transform: scale(1.1);
-            background: var(--accent-hover);
         }
 
         .quick-stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
-            margin-top: 1.8rem;
+            margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-color);
         }
@@ -402,7 +383,7 @@
         }
 
         /* ==========================================
-           SECTION HEADERS
+           SECTION HEADER
            ========================================== */
         .section {
             padding: 6rem 0;
@@ -410,8 +391,6 @@
 
         .section-alt {
             background-color: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
         }
 
         .section-header {
@@ -427,13 +406,13 @@
             font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.8px;
+            letter-spacing: 1.5px;
             color: var(--accent-primary);
             margin-bottom: 0.5rem;
         }
 
         .section-title {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             font-weight: 800;
             letter-spacing: -0.8px;
         }
@@ -488,7 +467,7 @@
         .timeline-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 18px;
+            border-radius: 16px;
             padding: 1.8rem;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
@@ -522,7 +501,7 @@
 
         .period-badge {
             background: var(--bg-input);
-            padding: 0.3rem 0.85rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
@@ -541,7 +520,7 @@
         }
 
         .timeline-body li {
-            margin-bottom: 0.45rem;
+            margin-bottom: 0.4rem;
         }
 
         .tag-list {
@@ -552,7 +531,7 @@
 
         .tech-tag {
             font-size: 0.75rem;
-            padding: 0.28rem 0.7rem;
+            padding: 0.25rem 0.65rem;
             border-radius: 6px;
             background: var(--bg-input);
             color: var(--text-secondary);
@@ -576,13 +555,13 @@
             display: flex;
             gap: 0.5rem;
             background: var(--bg-card);
-            padding: 0.35rem;
+            padding: 0.3rem;
             border-radius: 12px;
             border: 1px solid var(--border-color);
         }
 
         .filter-btn {
-            padding: 0.5rem 1.1rem;
+            padding: 0.5rem 1rem;
             border-radius: 8px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -606,7 +585,7 @@
 
         .search-input {
             width: 100%;
-            padding: 0.65rem 1rem 0.65rem 2.4rem;
+            padding: 0.6rem 1rem 0.6rem 2.4rem;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 10px;
@@ -649,7 +628,7 @@
         .project-card:hover {
             transform: translateY(-6px);
             border-color: var(--border-hover);
-            box-shadow: 0 15px 35px -10px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px -10px rgba(0,0,0,0.3);
         }
 
         .project-img-container {
@@ -681,7 +660,7 @@
         }
 
         .project-content {
-            padding: 1.6rem;
+            padding: 1.5rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -791,7 +770,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 1.6rem;
+            padding: 1.5rem;
             display: flex;
             gap: 1.2rem;
             align-items: flex-start;
@@ -808,7 +787,6 @@
             justify-content: center;
             font-size: 1.3rem;
             flex-shrink: 0;
-            border: 1px solid rgba(16, 185, 129, 0.2);
         }
 
         .edu-title {
@@ -830,7 +808,7 @@
         }
 
         /* ==========================================
-           CONTACT & RESUME DOWNLOAD SECTION
+           CONTACT SECTION
            ========================================== */
         .contact-card {
             background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
@@ -839,9 +817,8 @@
             padding: 3.5rem 2.5rem;
             box-shadow: var(--shadow);
             text-align: center;
-            max-width: 850px;
+            max-width: 800px;
             margin: 0 auto;
-            position: relative;
         }
 
         .contact-title {
@@ -854,7 +831,7 @@
             font-size: 1.1rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -862,7 +839,7 @@
         .contact-details {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
             margin-bottom: 2.5rem;
         }
@@ -874,16 +851,9 @@
             font-weight: 600;
             color: var(--text-primary);
             background: var(--bg-input);
-            padding: 0.6rem 1.3rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 30px;
             border: 1px solid var(--border-color);
-        }
-
-        .action-buttons-group {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
         }
 
         /* ==========================================
@@ -895,8 +865,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.78);
-            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
             z-index: 2000;
             display: flex;
             align-items: center;
@@ -917,10 +887,10 @@
             border: 1px solid var(--border-color);
             border-radius: 20px;
             width: 100%;
-            max-width: 620px;
+            max-width: 600px;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
             transform: scale(0.95);
             transition: transform 0.25s ease;
         }
@@ -1051,7 +1021,7 @@
         }
 
         /* ==========================================
-           PRINT / ATS CV STYLES
+           PRINT / ATS STYLES
            ========================================== */
         @media print {
             .navbar, .hero-cta, .nav-actions, .filter-tabs, .search-box, 
@@ -1179,18 +1149,18 @@
             </ul>
 
             <div class="nav-actions">
-                <button class="btn-icon" id="theme-toggle" title="Toggle Theme">
+                <button class="btn-icon" id="theme-toggle" title="Toggle Dark/Light Mode">
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                 </button>
 
-                <button class="btn btn-secondary" onclick="exportData()" title="Backup JSON Data">
+                <button class="btn btn-secondary" onclick="exportData()" title="Backup JSON">
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     <span>Export</span>
                 </button>
 
                 <button class="btn btn-primary" onclick="window.print()">
                     <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
-                    <span>Print Resume / PDF</span>
+                    <span>Print / PDF</span>
                 </button>
             </div>
         </div>
@@ -1202,21 +1172,21 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="status-dot"></span>
-                    <span id="hero-status">Open to Engineering Roles & Strategic Advisory</span>
+                    <span id="hero-status">Available for Senior Roles & Consulting</span>
                 </div>
 
                 <h1 class="hero-title">
                     Hi, I'm <span class="text-gradient" id="hero-name">Alex Morgan</span>.<br>
-                    <span id="hero-headline">Building Scalable Architectures & Modern Products.</span>
+                    <span id="hero-headline">Building Scalable Web Products & Elegant UI.</span>
                 </h1>
 
                 <p class="hero-bio" id="hero-bio">
-                    Senior Software Engineer & Systems Architect with 7+ years of expertise delivering high-throughput cloud services, robust full-stack applications, and enterprise design systems.
+                    Full-Stack Software Engineer & UX Strategist with 7+ years of experience designing and shipping high-impact cloud architectures, high-performance web apps, and modern user experiences.
                 </p>
 
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary">
-                        Explore Work
+                        View Projects
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
                     </a>
 
@@ -1226,7 +1196,7 @@
                     </button>
 
                     <div class="social-links" id="social-links">
-                        <!-- Populated via JavaScript -->
+                        <!-- Populated via JS -->
                     </div>
                 </div>
             </div>
@@ -1234,20 +1204,20 @@
             <div class="hero-card">
                 <div class="avatar-wrapper">
                     <img id="profile-avatar" class="avatar-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" alt="Profile Picture">
-                    <div class="avatar-edit-overlay" onclick="triggerAvatarUpload()" title="Change Photo">
+                    <div class="avatar-edit-overlay" onclick="triggerAvatarUpload()" title="Change Profile Picture">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                     </div>
                     <input type="file" id="avatar-file-input" style="display:none" accept="image/*" onchange="handleAvatarUpload(event)">
                 </div>
 
-                <h3 style="font-weight: 800; font-size: 1.35rem;" id="card-name">Alex Morgan</h3>
+                <h3 style="font-weight: 800; font-size: 1.3rem;" id="card-name">Alex Morgan</h3>
                 <p style="color: var(--text-secondary); font-weight: 500; font-size: 0.92rem; margin-bottom: 1rem;" id="card-title">Senior Full-Stack Engineer</p>
                 <div class="badge" id="card-location">📍 San Francisco, CA (Remote)</div>
 
                 <div class="quick-stats">
                     <div class="stat-item">
                         <h4 id="stat-exp">7+</h4>
-                        <p>Years Experience</p>
+                        <p>Years Exp</p>
                     </div>
                     <div class="stat-item">
                         <h4 id="stat-projects">24+</h4>
@@ -1255,7 +1225,7 @@
                     </div>
                     <div class="stat-item">
                         <h4 id="stat-clients">100%</h4>
-                        <p>Delivery Rate</p>
+                        <p>Success Rate</p>
                     </div>
                 </div>
             </div>
@@ -1298,15 +1268,15 @@
 
             <div class="controls-bar">
                 <div class="filter-tabs" id="project-filters">
-                    <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects</button>
+                    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
                     <button class="filter-btn" onclick="filterProjects('Web', this)">Web Apps</button>
                     <button class="filter-btn" onclick="filterProjects('Mobile', this)">Mobile</button>
-                    <button class="filter-btn" onclick="filterProjects('AI', this)">AI & Systems</button>
+                    <button class="filter-btn" onclick="filterProjects('AI', this)">AI / ML</button>
                 </div>
 
                 <div class="search-box">
                     <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <input type="text" id="project-search" class="search-input" placeholder="Search title, tech, description..." oninput="searchProjects(this.value)">
+                    <input type="text" id="project-search" class="search-input" placeholder="Search by title or tech..." oninput="searchProjects(this.value)">
                 </div>
             </div>
 
@@ -1321,8 +1291,8 @@
         <div class="container">
             <div class="section-header">
                 <div>
-                    <div class="section-subtitle">Technical Competencies</div>
-                    <h2 class="section-title">Skills & Expertise</h2>
+                    <div class="section-subtitle">Core Technical Competencies</div>
+                    <h2 class="section-title">Skills & Capabilities</h2>
                 </div>
             </div>
 
@@ -1337,8 +1307,8 @@
         <div class="container">
             <div class="section-header">
                 <div>
-                    <div class="section-subtitle">Credentials</div>
-                    <h2 class="section-title">Education & Certifications</h2>
+                    <div class="section-subtitle">Background</div>
+                    <h2 class="section-title">Education & Credentials</h2>
                 </div>
             </div>
 
@@ -1352,9 +1322,9 @@
     <section class="section section-alt" id="contact">
         <div class="container">
             <div class="contact-card">
-                <h2 class="contact-title">Let's Connect</h2>
+                <h2 class="contact-title">Let's Build Something Great</h2>
                 <p class="contact-desc">
-                    Interested in discussing full-time opportunities, high-impact contract work, or technical consultation? Reach out directly.
+                    I'm currently open to full-time engineering leadership roles, freelance consulting projects, or technical advising.
                 </p>
 
                 <div class="contact-details">
@@ -1369,17 +1339,10 @@
                     </div>
                 </div>
 
-                <div class="action-buttons-group">
-                    <a href="#" id="email-cta-btn" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 0.98rem;">
-                        Send Direct Email
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </a>
-
-                    <button class="btn btn-secondary" onclick="window.print()" style="padding: 0.85rem 1.8rem; font-size: 0.98rem;">
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        Download Executive CV
-                    </button>
-                </div>
+                <a href="#" id="email-cta-btn" class="btn btn-primary" style="padding: 0.9rem 2rem; font-size: 1rem;">
+                    Send Me an Email
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1388,9 +1351,9 @@
     <footer class="footer">
         <div class="container footer-content">
             <div>
-                © <span id="current-year">2026</span> <span id="footer-name">Alex Morgan</span>. Professional Portfolio.
+                © <span id="current-year">2026</span> <span id="footer-name">Alex Morgan</span>. All rights reserved.
             </div>
-            <div>
+            <div style="display:flex; gap: 1rem;">
                 <button class="btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 6px;" onclick="resetToDefaults()">Reset Demo Data</button>
             </div>
         </div>
@@ -1427,7 +1390,7 @@
                     <input type="email" id="input-email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label class="form-label">Professional Summary</label>
+                    <label class="form-label">Bio / Summary</label>
                     <textarea id="input-bio" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
@@ -1442,7 +1405,7 @@
         </div>
     </div>
 
-    <!-- Experience Modal -->
+    <!-- Add/Edit Experience Modal -->
     <div class="modal-overlay" id="experience-modal">
         <div class="modal-container">
             <div class="modal-header">
@@ -1453,7 +1416,7 @@
                 <input type="hidden" id="exp-edit-id">
                 <div class="form-group">
                     <label class="form-label">Job Title / Role</label>
-                    <input type="text" id="exp-role" class="form-control" placeholder="e.g. Lead Systems Architect">
+                    <input type="text" id="exp-role" class="form-control" placeholder="e.g. Lead Frontend Architect">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Company Name</label>
@@ -1465,11 +1428,11 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Key Accomplishments (One bullet per line)</label>
-                    <textarea id="exp-bullets" class="form-control" placeholder="• Scaled microservices throughput by 45%&#10;• Led team of 12 engineers building real-time data pipelines"></textarea>
+                    <textarea id="exp-bullets" class="form-control" placeholder="• Scaled backend throughput by 40%&#10;• Led cross-functional team of 8 engineers"></textarea>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Tech Stack Tags (Comma separated)</label>
-                    <input type="text" id="exp-tags" class="form-control" placeholder="TypeScript, Next.js, Node.js, AWS">
+                    <input type="text" id="exp-tags" class="form-control" placeholder="React, Node.js, GraphQL, AWS">
                 </div>
             </div>
             <div class="modal-footer">
@@ -1479,7 +1442,7 @@
         </div>
     </div>
 
-    <!-- Project Modal -->
+    <!-- Add/Edit Project Modal -->
     <div class="modal-overlay" id="project-modal">
         <div class="modal-container">
             <div class="modal-header">
@@ -1490,14 +1453,15 @@
                 <input type="hidden" id="proj-edit-id">
                 <div class="form-group">
                     <label class="form-label">Project Title</label>
-                    <input type="text" id="proj-title" class="form-control" placeholder="e.g. CloudPulse Enterprise Platform">
+                    <input type="text" id="proj-title" class="form-control" placeholder="e.g. CloudPulse AI Dashboard">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Category</label>
                     <select id="proj-category" class="form-control">
                         <option value="Web">Web Apps</option>
                         <option value="Mobile">Mobile</option>
-                        <option value="AI">AI & Systems</option>
+                        <option value="AI">AI / ML</option>
+                        <option value="Design">UI/UX Design</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -1506,11 +1470,11 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label">Description</label>
-                    <textarea id="proj-desc" class="form-control" placeholder="Detailed technical overview and measurable outcomes..."></textarea>
+                    <textarea id="proj-desc" class="form-control" placeholder="Brief summary of what the project accomplishes and tech involved..."></textarea>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Technologies (Comma separated)</label>
-                    <input type="text" id="proj-tags" class="form-control" placeholder="React, Python, GraphQL, Docker">
+                    <input type="text" id="proj-tags" class="form-control" placeholder="TypeScript, Next.js, Tailwind, Python">
                 </div>
                 <div class="form-group">
                     <label class="form-label">Live Demo URL</label>
@@ -1528,61 +1492,62 @@
         </div>
     </div>
 
-    <!-- Toast Container -->
+    <!-- Toast Notification Container -->
     <div class="toast-container" id="toast-container"></div>
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
         /* ==========================================
-           PROFESSIONAL DEFAULT PROFILE DATA
+           INITIAL DEFAULT PROFILE DATA
            ========================================== */
         const DEFAULT_DATA = {
             profile: {
                 name: "Alex Morgan",
-                headline: "Building Scalable Architectures & Modern Products.",
-                status: "Open to Engineering Roles & Strategic Advisory",
+                headline: "Building Scalable Web Products & Elegant Interfaces.",
+                status: "Available for Senior Roles & Consulting",
                 location: "San Francisco, CA (Remote)",
                 email: "alex.morgan@dev.io",
-                bio: "Senior Software Engineer & Systems Architect with 7+ years of expertise delivering high-throughput cloud services, robust full-stack applications, and enterprise design systems.",
+                bio: "Full-Stack Software Engineer & UX Strategist with 7+ years of experience designing and shipping high-impact cloud architectures, high-performance web apps, and modern user experiences.",
                 yearsExp: "7+",
                 avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400",
                 socials: [
                     { name: "GitHub", url: "https://github.com", icon: '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>' },
-                    { name: "LinkedIn", url: "https://linkedin.com", icon: '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>' }
+                    { name: "LinkedIn", url: "https://linkedin.com", icon: '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>' },
+                    { name: "Twitter", url: "https://twitter.com", icon: '<svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59z"/></svg>' }
                 ]
             },
             experiences: [
                 {
                     id: "exp-1",
                     role: "Staff Software Engineer",
-                    company: "Vercel / Cloud Infrastructure Tech",
+                    company: "Vercel / Cloud Tech",
                     period: "2023 — Present",
                     bullets: [
-                        "Architected micro-frontend deployment pipelines reducing build times by 42% across enterprise fleets.",
-                        "Led an engineering organization of 10+ shipping global edge runtime infrastructure for real-time workload orchestration.",
-                        "Established technical design standards, security compliance practices, and mentored senior staff engineers."
+                        "Architected micro-frontend deployment pipeline reducing build times by 42%.",
+                        "Led a team of 10 engineers shipping edge runtime infrastructure for real-time AI workloads.",
+                        "Mentored junior/mid-level engineers and conducted technical design reviews."
                     ],
-                    tags: ["TypeScript", "Next.js", "Edge Compute", "GraphQL", "AWS", "Terraform"]
+                    tags: ["TypeScript", "Next.js", "Edge Compute", "GraphQL", "AWS"]
                 },
                 {
                     id: "exp-2",
                     role: "Senior Full-Stack Developer",
-                    company: "Stripe Digital Solutions",
+                    company: "Stripe Digital",
                     period: "2020 — 2023",
                     bullets: [
-                        "Engineered payment checkout interface components handling $50M+ annual transaction throughput with 99.99% uptime.",
-                        "Optimized RESTful and GraphQL backend endpoints resulting in a 200ms latency reduction across high-volume merchant dashboards."
+                        "Built checkout UI components processing $50M+ annual transaction volume with 99.99% uptime.",
+                        "Optimized REST and GraphQL APIs resulting in a 200ms latency reduction across dashboard views."
                     ],
-                    tags: ["React", "Node.js", "PostgreSQL", "Docker", "Redis", "Kubernetes"]
+                    tags: ["React", "Node.js", "PostgreSQL", "Docker", "Redis"]
                 },
                 {
                     id: "exp-3",
-                    role: "UI/UX Software Engineer",
-                    company: "Acme Product Labs",
+                    role: "UI/UX Engineer",
+                    company: "Acme Product Lab",
                     period: "2018 — 2020",
                     bullets: [
-                        "Designed and published a design system adopted across 15 internal and public-facing web applications.",
-                        "Pioneered WCAG AA accessibility compliance frameworks across all user touchpoints."
+                        "Designed and developed a scalable design system used by 15+ internal product teams.",
+                        "Pioneered WCAG AA accessibility standards across all customer touchpoints."
                     ],
                     tags: ["Vue.js", "Design Systems", "Sass", "Figma", "Jest"]
                 }
@@ -1590,30 +1555,30 @@
             projects: [
                 {
                     id: "proj-1",
-                    title: "Aura AI Enterprise Intelligence Platform",
+                    title: "Aura AI Analytics Engine",
                     category: "AI",
                     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600",
-                    desc: "An enterprise real-time data streaming platform featuring dynamic LLM analytical insights and automated PDF executive reporting.",
+                    desc: "An enterprise real-time data visualization platform equipped with predictive LLM insights and automated reporting.",
                     tags: ["React", "Python", "FastAPI", "Tailwind", "OpenAI"],
                     demo: "https://example.com",
                     github: "https://github.com"
                 },
                 {
                     id: "proj-2",
-                    title: "FlowState Collaborative Workspace",
+                    title: "FlowState Workspace",
                     category: "Web",
                     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=600",
-                    desc: "A minimal, distraction-free document editor engineered with real-time multiplayer CRDT synchronization and offline storage.",
+                    desc: "A minimal, distraction-free collaborative document editor featuring real-time multiplayer CRDT sync.",
                     tags: ["TypeScript", "WebSockets", "Node.js", "ProseMirror"],
                     demo: "https://example.com",
                     github: "https://github.com"
                 },
                 {
                     id: "proj-3",
-                    title: "PulseFit Health Ecosystem",
+                    title: "PulseFit Health Tracker",
                     category: "Mobile",
                     image: "https://images.unsplash.com/photo-1510519138161-584457933146?auto=format&fit=crop&q=80&w=600",
-                    desc: "Cross-platform mobile application tracking workout telemetry, health biometrics, and integrating directly with HealthKit.",
+                    desc: "Cross-platform iOS and Android app that tracks workouts, biometrics, and syncs seamlessly with Apple HealthKit.",
                     tags: ["React Native", "Expo", "GraphQL", "Firebase"],
                     demo: "https://example.com",
                     github: "https://github.com"
@@ -1621,46 +1586,46 @@
             ],
             skills: [
                 {
-                    category: "Frontend & UI Systems",
-                    items: ["React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS", "HTML5/CSS3", "WebGL"]
+                    category: "Frontend Development",
+                    items: ["React", "Next.js", "TypeScript", "Vue.js", "Tailwind CSS", "HTML5/CSS3", "WebGL/Three.js"]
                 },
                 {
-                    category: "Backend & Cloud Architecture",
+                    category: "Backend & Cloud",
                     items: ["Node.js", "Python", "Go", "PostgreSQL", "Redis", "GraphQL", "AWS", "Docker"]
                 },
                 {
-                    category: "Leadership & Methodology",
-                    items: ["System Architecture", "CI/CD Pipelines", "Agile/Scrum", "Code Auditing", "Mentorship"]
+                    category: "Tools & Practice",
+                    items: ["Git", "CI/CD", "Jest/Cypress", "Figma", "System Design", "Agile/Scrum"]
                 }
             ],
             education: [
                 {
-                    degree: "B.S. in Computer Science & Systems Engineering",
+                    degree: "B.S. in Computer Science",
                     institution: "University of California, Berkeley",
                     year: "2014 — 2018",
-                    details: "Graduated with High Honors. Specialization in Distributed Systems & HCI."
+                    details: "Graduated with High Honors. Focus on Distributed Systems & Human-Computer Interaction."
                 },
                 {
-                    degree: "AWS Certified Solutions Architect — Professional",
+                    degree: "AWS Certified Solutions Architect",
                     institution: "Amazon Web Services",
-                    year: "Certification",
-                    details: "Advanced Cloud Architecture & Enterprise Infrastructure Strategy."
+                    year: "Issued 2023",
+                    details: "Professional Level Certification for Cloud Infrastructure Design."
                 }
             ]
         };
 
         /* ==========================================
-           STATE & LOCAL STORAGE MANAGEMENT
+           STATE MANAGEMENT & LOCAL STORAGE
            ========================================== */
-        let state = JSON.parse(localStorage.getItem('personal_profile_green_data')) || DEFAULT_DATA;
+        let state = JSON.parse(localStorage.getItem('personal_portfolio_data')) || DEFAULT_DATA;
 
         function saveData() {
-            localStorage.setItem('personal_profile_green_data', JSON.stringify(state));
+            localStorage.setItem('personal_portfolio_data', JSON.stringify(state));
             renderAll();
         }
 
         function resetToDefaults() {
-            if (confirm("Reset profile data back to original default portfolio standards?")) {
+            if (confirm("Reset profile data back to original demo values?")) {
                 state = JSON.parse(JSON.stringify(DEFAULT_DATA));
                 saveData();
                 showToast("Profile reset to defaults.");
@@ -1696,6 +1661,7 @@
             document.getElementById('footer-name').textContent = p.name;
             document.getElementById('email-cta-btn').href = `mailto:${p.email}`;
 
+            // Render Socials
             const socialContainer = document.getElementById('social-links');
             socialContainer.innerHTML = p.socials.map(s => `
                 <a href="${s.url}" target="_blank" rel="noopener" class="btn-icon" title="${s.name}">
@@ -1707,7 +1673,7 @@
         function renderExperiences() {
             const container = document.getElementById('experience-timeline');
             if (!state.experiences || state.experiences.length === 0) {
-                container.innerHTML = '<p style="color:var(--text-muted); text-align:center;">No work experience entries yet.</p>';
+                container.innerHTML = '<p style="color:var(--text-muted); text-align:center;">No work experience added yet.</p>';
                 return;
             }
 
@@ -1821,7 +1787,7 @@
         }
 
         /* ==========================================
-           MODALS & INTERACTION LOGIC
+           INTERACTIONS & MODAL HANDLERS
            ========================================== */
         function openModal(id) {
             document.getElementById(id).classList.add('active');
@@ -1831,6 +1797,7 @@
             document.getElementById(id).classList.remove('active');
         }
 
+        // Profile Editing
         function openProfileModal() {
             const p = state.profile;
             document.getElementById('input-name').value = p.name;
@@ -1854,9 +1821,10 @@
             
             saveData();
             closeModal('profile-modal');
-            showToast("Profile updated!");
+            showToast("Profile details updated!");
         }
 
+        // Experience Modal Logic
         function openExperienceModal() {
             document.getElementById('exp-modal-title').textContent = "Add Work Experience";
             document.getElementById('exp-edit-id').value = "";
@@ -1898,11 +1866,13 @@
             const tags = tagsText.split(',').map(t => t.trim()).filter(t => t.length > 0);
 
             if (id) {
+                // Update existing
                 const idx = state.experiences.findIndex(e => e.id === id);
                 if (idx !== -1) {
                     state.experiences[idx] = { id, role, company, period, bullets, tags };
                 }
             } else {
+                // Create new
                 state.experiences.unshift({
                     id: 'exp-' + Date.now(),
                     role, company, period, bullets, tags
@@ -1915,13 +1885,14 @@
         }
 
         function deleteExperience(id) {
-            if (confirm("Delete this experience entry?")) {
+            if (confirm("Are you sure you want to delete this position?")) {
                 state.experiences = state.experiences.filter(e => e.id !== id);
                 saveData();
                 showToast("Experience deleted.");
             }
         }
 
+        // Project Modal Logic
         function openProjectModal() {
             document.getElementById('proj-modal-title').textContent = "Add New Project";
             document.getElementById('proj-edit-id').value = "";
@@ -1992,6 +1963,9 @@
             }
         }
 
+        /* ==========================================
+           FILTERING & SEARCH
+           ========================================== */
         function filterProjects(category, btn) {
             currentCategoryFilter = category;
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -2004,6 +1978,9 @@
             renderProjects();
         }
 
+        /* ==========================================
+           AVATAR UPLOAD HANDLING
+           ========================================== */
         function triggerAvatarUpload() {
             document.getElementById('avatar-file-input').click();
         }
@@ -2021,46 +1998,54 @@
             }
         }
 
-        /* Theme Switcher */
+        /* ==========================================
+           THEME TOGGLE
+           ========================================== */
         const themeToggleBtn = document.getElementById('theme-toggle');
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
             
+            // Icon toggle
             themeToggleBtn.innerHTML = newTheme === 'dark' 
                 ? '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
                 : '<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>';
         });
 
-        /* JSON Export */
+        /* ==========================================
+           DATA EXPORT & IMPORT
+           ========================================== */
         function exportData() {
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
-            downloadAnchor.setAttribute("download", `${state.profile.name.toLowerCase().replace(/\s+/g, '_')}_profile.json`);
+            downloadAnchor.setAttribute("download", `${state.profile.name.toLowerCase().replace(/\s+/g, '_')}_portfolio_data.json`);
             document.body.appendChild(downloadAnchor);
             downloadAnchor.click();
             downloadAnchor.remove();
-            showToast("Profile JSON Exported!");
+            showToast("JSON Profile Exported!");
         }
 
-        /* Toast Notifications */
+        /* ==========================================
+           TOAST NOTIFICATIONS
+           ========================================== */
         function showToast(message) {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             toast.className = 'toast';
-            toast.innerHTML = `<span>⚡</span> <span>${escapeHtml(message)}</span>`;
+            toast.innerHTML = `<span>✅</span> <span>${escapeHtml(message)}</span>`;
             container.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
         }
 
-        /* Security Utility */
+        /* Utility */
         function escapeHtml(str) {
             if (!str) return '';
             return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
         }
 
+        // Initialize App
         window.addEventListener('DOMContentLoaded', () => {
             renderAll();
         });
